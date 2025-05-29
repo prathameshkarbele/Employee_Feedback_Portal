@@ -2,9 +2,9 @@
 /node_modules
 
 # environment variables
-.env
-.env.local
-.env.*.local
+# .env
+# .env.local
+# .env.*.local
 
 # logs
 npm-debug.log*
@@ -24,8 +24,8 @@ pids
 /build
 
 # misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local 
+# .DS_Store
+# .env.local
+# .env.development.local
+# .env.test.local
+# .env.production.local 

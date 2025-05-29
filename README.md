@@ -1,114 +1,70 @@
 # Employee Feedback Portal
 
-A full-stack application that allows employees to submit anonymous feedback and administrators to manage and review the feedback.
+A simple web app where employees can give anonymous feedback and admins can manage it.
 
-## Tech Stack
-
-- Frontend: React.js with functional components and hooks
-- Backend: Node.js with Express.js
-- Database: MongoDB
-- UI : Using Css
-
-## Project Structure
-
-```
-├── Frontend/               # React frontend application
-│   ├── src/
-│   │   ├── components/    # Reusable components
-│   │   ├── pages/        # Page components
-│   │   ├── services/     # API services
-│   │   └── utils/        # Utility functions
-│   └── public/           # Static files
-│
-└── Backend/              # Node.js backend application
-    ├── src/
-    │   ├── controllers/  # Route controllers
-    │   ├── models/      # Database models
-    │   ├── routes/      # API routes
-    │   └── config/      # Configuration files
-    └── tests/           # Test files
-```
-
-## Setup Instructions
-
-### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB
-- npm or yarn
+## How to Run the App
 
 ### Backend Setup
-1. Navigate to the Backend directory:
-   ```bash
-   cd Backend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Create a .env file with the following variables:
+1. Go to Backend folder
+2. Run `npm install`
+3. Create `.env` file with:
    ```
    PORT=5000
    MONGODB_URI=mongodb://localhost:27017/feedback-portal
    ```
-4. Start the server:
-   ```bash
-   npm start
-   ```
+4. Run `npm start`
 
 ### Frontend Setup
-1. Navigate to the Frontend directory:
-   ```bash
-   cd Frontend
+1. Go to Frontend folder
+2. Run `npm install`
+3. Create `.env` file with:
    ```
-2. Install dependencies:
-   ```bash
-   npm install
+   REACT_APP_API_URL=http://localhost:5000
    ```
-3. Start the development server:
-   ```bash
-   npm start
-   ```
+4. Run `npm start`
 
-## API Endpoints
+## Environment Files
 
-### Feedback Management
-- `POST /api/feedback` - Submit new feedback
+### Backend (.env)
+```
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/feedback-portal
+```
+
+### Frontend (.env)
+```
+REACT_APP_API_URL=http://localhost:5000
+```
+
+Note: Environment files (.env) are included in the repository and not added to .gitignore for demonstration purposes.
+
+## API Structure
+
+- `POST /api/feedback` - Add new feedback
 - `GET /api/feedback` - Get all feedback
-- `GET /api/feedback?category=xyz` - Filter feedback by category
+- `GET /api/feedback?category=xyz` - Get feedback by category
 - `PATCH /api/feedback/:id/reviewed` - Mark feedback as reviewed
-- `DELETE /api/feedback/:id` - Delete feedback
-
-## Features
-
-### Employee Side
-- Anonymous feedback submission
-- Category selection
-- Feedback text input
-
-### Admin Side
-- View all feedback in a table format
-- Filter feedback by category
-- Mark feedback as reviewed
-- Delete feedback
-- View submission timestamps
+- `DELETE /api/feedback/:id` - Remove feedback
 
 ## Assumptions
 
-1. No authentication required for feedback submission
-2. Admin access is handled through a simple admin route
-3. Feedback is stored with timestamps in UTC
-4. Categories are predefined and cannot be modified by users
+1. No login needed to submit feedback
+2. Admin access through simple admin page
+3. Feedback times are in UTC
+4. Categories are fixed and can't be changed
 
-## Completed Features
-- [x] Basic project structure
-- [x] API endpoints implementation
-- [x] Database schema design
-- [x] Frontend components structure
-- [x] Basic styling with Material-UI
+## What's Done and What's Not
 
-## Pending Features
-- [ ] Unit tests
-- [ ] Error handling improvements
-- [ ] Loading states
-- [ ] Advanced filtering options
-- [ ] Pagination for feedback list 
+### Done
+- Basic app structure
+- API endpoints
+- Database setup
+- Frontend pages
+- Basic styling
+
+### Not Done
+- Tests
+- Better error handling
+- Loading screens
+- More filter options
+- Page numbers for feedback list 

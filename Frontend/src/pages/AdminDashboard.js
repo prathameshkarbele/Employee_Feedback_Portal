@@ -87,22 +87,24 @@ function AdminDashboard() {
                       {item.isReviewed ? 'Reviewed' : 'Pending'}
                     </span>
                   </td>
-                  <td>
+                  <td style={{display: 'flex', gap: '10px'}}>
                     {!item.isReviewed && (
                       <button
+                      style={{backgroundColor: 'green', color: 'white'}}
                         className="icon-button"
                         onClick={() => handleMarkAsReviewed(item._id)}
                         title="Mark as Reviewed"
                       >
-                        ✓
+                        Mark Reviewed
                       </button>
                     )}
                     <button
+                    style={{backgroundColor: 'red', color: 'white'}}
                       className="icon-button danger"
                       onClick={() => handleDelete(item._id)}
                       title="Delete"
                     >
-                      ×
+                      Delete
                     </button>
                   </td>
                 </tr>
